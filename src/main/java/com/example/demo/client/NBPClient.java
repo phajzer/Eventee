@@ -1,4 +1,5 @@
 package com.example.demo.client;
+import com.example.demo.client.dto.CurrencyTable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 

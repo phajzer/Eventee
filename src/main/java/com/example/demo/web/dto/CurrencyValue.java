@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.web.dto;
 
 
 import lombok.Builder;
