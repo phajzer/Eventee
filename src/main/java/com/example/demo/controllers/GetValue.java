@@ -1,6 +1,6 @@
-package Controllers;
+package com.example.demo.controllers;
 
-import Utils.Currency;
+import com.example.demo.utils.Currency;
 import lombok.Data;
 
 @Data

@@ -1,4 +1,4 @@
-package Utils;
+package com.example.demo.utils;
 
 public enum Currency {
     THB,

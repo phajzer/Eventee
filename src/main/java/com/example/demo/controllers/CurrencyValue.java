@@ -1,4 +1,4 @@
-package Controllers;
+package com.example.demo.controllers;
 
 
 import lombok.Builder;

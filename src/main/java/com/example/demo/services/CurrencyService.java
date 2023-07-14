@@ -1,8 +1,8 @@
-package Services;
+package com.example.demo.services;
 
-import Client.CurrencyTable;
-import Client.NBPClient;
-import Utils.Currency;
+import com.example.demo.client.CurrencyTable;
+import com.example.demo.client.NBPClient;
+import com.example.demo.utils.Currency;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;

@@ -1,4 +1,4 @@
-package Client;
+package com.example.demo.client;
 
 public class Rate {
     public String currency;

@@ -1,4 +1,4 @@
-package Client;
+package com.example.demo.client;
 
 import java.util.ArrayList;
 
