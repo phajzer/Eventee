@@ -1,10 +1,13 @@
 package com.example.demo.client;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 
+@Data
 public class CurrencyTable {
-    public String table;
-    public String no;
-    public String effectiveDate;
-    public ArrayList<Rate> rates;
+    private String table;
+    private String no;
+    private String effectiveDate;
+    private ArrayList<Rate> rates;
 }

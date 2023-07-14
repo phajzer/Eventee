@@ -3,30 +3,28 @@ package com.example.demo.services;
 import com.example.demo.client.CurrencyTable;
 import com.example.demo.client.NBPClient;
 import com.example.demo.utils.Currency;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 
 @Service
+@RequiredArgsConstructor
 public class CurrencyService {
-    private NBPClient nbpClient;
+    private final NBPClient nbpClient;
 
     public Double getUserCurrencyValue(Currency currency, String userName) {
-        CurrencyTable currencyTable = nbpClient.getCurrencyTable();
-        return findCurrencyValue(currency, currencyTable);
+        CurrencyTable[] currencyTable = nbpClient.getCurrencyTable();
+        return findCurrencyValue(currency, currencyTable[0]);
     }
 
     private Double findCurrencyValue(Currency currency, CurrencyTable currencyTable) {
-        try {
-            return currencyTable.rates.stream()
-                    .filter(x -> x.code.equals(currency.toString()))
-                    .findFirst()
-                    .orElseThrow(() -> new NoSuchElementException("Currency not found in the table"))
-                    .mid;
-        } catch (Exception e) {
-            e.printStackTrace(); // Przykładowa obsługa błędu
-            return null; // lub inna wartość domyślna, która wskazuje na brak wyniku
-        }
+
+        return currencyTable.getRates().stream()
+                .filter(x -> x.code.equals(currency.toString()))
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("Currency not found in the table"))
+                .mid;
 
     }
 }
