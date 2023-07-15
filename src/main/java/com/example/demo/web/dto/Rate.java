@@ -1,4 +1,4 @@
-package com.example.demo.client.dto;
+package com.example.demo.web.dto;
 
 import lombok.Data;
 

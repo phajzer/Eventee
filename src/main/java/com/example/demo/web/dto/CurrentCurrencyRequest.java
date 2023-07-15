@@ -4,7 +4,7 @@ import com.example.demo.utils.Currency;
 import lombok.Data;
 
 @Data
-public class RequestValue {
+public class CurrentCurrencyRequest {
     private Currency currency;
     private String name;
 }

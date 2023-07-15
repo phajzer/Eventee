@@ -1,9 +1,9 @@
 package com.example.demo.repo;
 import com.example.demo.utils.Currency;
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 import java.time.LocalDateTime;
+
 
 @Entity
 @Builder
@@ -23,5 +23,5 @@ public class UserHistory {
 
     private LocalDateTime date;
 
-    private double value;
+    private double currencyValue;
 }
