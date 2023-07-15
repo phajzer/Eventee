@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.utils.CurrencyMapper;
 import com.example.demo.web.dto.CurrencyTableDTO;
 import com.example.demo.web.client.NBPClient;
 import com.example.demo.repo.UserHistory;
@@ -15,7 +14,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
-import static com.example.demo.utils.CurrencyMapper.mapUserHistoryToDTO;
 
 @Service
 @RequiredArgsConstructor
@@ -52,7 +50,12 @@ public class CurrencyServiceImpl implements CurrencyService {
 
     public List<UserHistoryDTO> getAllUsersSearchHistory() {
         return userHistoryRepository.findAll().stream()
-                .map(CurrencyMapper::mapUserHistoryToDTO)
+                .map(el -> UserHistoryDTO.builder()
+                        .currency(el.getCurrency())
+                        .name(el.getName())
+                        .date(el.getDate())
+                        .value(el.getCurrencyValue())
+                        .build())
                 .collect(Collectors.toList());
     }
 }

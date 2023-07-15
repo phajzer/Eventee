@@ -18,7 +18,6 @@ import java.util.List;
 public class CurrenciesController {
 
     private final CurrencyService currencyService;
-
     private final NBPClient nbpClient;
 
     @PostMapping("/get-current-currency-value-command")
@@ -28,16 +27,9 @@ public class CurrenciesController {
                 .build();
     }
 
-    @GetMapping("/test")
-    public CurrencyTableDTO[] getCurrencyTable(){
-        return nbpClient.getCurrencyTable();
-    }
-
     @GetMapping("/requests")
     public List<UserHistoryDTO> getAllRequestsHistory(){
         return currencyService.getAllUsersSearchHistory();
     }
-
-
 
 }

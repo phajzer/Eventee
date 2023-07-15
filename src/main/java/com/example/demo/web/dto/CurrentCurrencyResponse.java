@@ -5,5 +5,5 @@ import lombok.Builder;
 
 @Builder
 public class CurrentCurrencyResponse {
-    public Double value;
+    public double value;
 }
