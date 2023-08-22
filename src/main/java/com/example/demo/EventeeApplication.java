@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class XcodeApplication {
+public class EventeeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(XcodeApplication.class, args);
+		SpringApplication.run(EventeeApplication.class, args);
 	}
 
 }
